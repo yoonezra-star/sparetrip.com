@@ -127,6 +127,7 @@ nav a:hover { color: var(--accent); }
 }
 .official-links a, .related-links a { color: var(--accent-dark); font-weight: 800; }
 .official-links span { color: var(--muted); font-size: 14px; }
+.decision-guide table { margin-bottom: 0; background: #fff; }
 table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 15px; }
 th, td { border: 1px solid var(--line); padding: 10px 12px; vertical-align: top; }
 th { background: var(--soft); text-align: left; }
