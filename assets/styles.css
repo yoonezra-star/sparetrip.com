@@ -77,6 +77,34 @@ nav a:hover { color: var(--accent); }
 .feature-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .feature { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 20px; }
 .feature strong { display: block; margin-bottom: 8px; }
+.route-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.route-list a {
+  display: grid;
+  gap: 8px;
+  min-height: 148px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  text-decoration: none;
+  background: #fff;
+}
+.route-list span { color: var(--muted); font-size: 15px; }
+.topic-map {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 28px 0 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+}
+.topic-map h2 { font-size: 18px; margin-bottom: 8px; }
+.topic-map p { margin: 0; font-size: 15px; }
 .article { max-width: 860px; }
 .article-header img { width: 100%; aspect-ratio: 16 / 8; object-fit: cover; border-radius: 8px; margin: 26px 0 12px; }
 .article-meta { color: var(--muted); font-size: 14px; margin: 10px 0 0; }
@@ -84,6 +112,21 @@ nav a:hover { color: var(--accent); }
 .article h3 { margin-top: 30px; }
 .article p { margin: 16px 0; }
 .article ul { padding-left: 22px; }
+.info-box {
+  margin: 30px 0;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+}
+.info-box h2 { margin-top: 0; }
+.info-box li { margin: 10px 0; }
+.official-links li {
+  display: grid;
+  gap: 3px;
+}
+.official-links a, .related-links a { color: var(--accent-dark); font-weight: 800; }
+.official-links span { color: var(--muted); font-size: 14px; }
 table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 15px; }
 th, td { border: 1px solid var(--line); padding: 10px 12px; vertical-align: top; }
 th { background: var(--soft); text-align: left; }
@@ -92,6 +135,6 @@ th { background: var(--soft); text-align: left; }
 .site-footer a { color: var(--accent-dark); }
 @media (max-width: 880px) {
   .site-header { align-items: flex-start; flex-direction: column; }
-  .grid, .feature-list { grid-template-columns: 1fr; }
+  .grid, .feature-list, .route-list, .topic-map { grid-template-columns: 1fr; }
   .hero { min-height: 460px; }
 }
