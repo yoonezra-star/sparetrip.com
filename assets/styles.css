@@ -153,6 +153,16 @@ nav a:hover { color: var(--accent); }
 .decision-guide table { margin-bottom: 0; background: #fff; }
 .review-box table { margin-bottom: 0; background: #fff; }
 .review-box th { width: 138px; }
+.faq-box details {
+  border-top: 1px solid var(--line);
+  padding: 14px 0;
+}
+.faq-box details:first-of-type { border-top: 0; }
+.faq-box summary {
+  cursor: pointer;
+  font-weight: 800;
+}
+.faq-box p { margin-bottom: 0; }
 table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 15px; }
 th, td { border: 1px solid var(--line); padding: 10px 12px; vertical-align: top; }
 th { background: var(--soft); text-align: left; }
