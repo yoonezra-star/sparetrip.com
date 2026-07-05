@@ -105,6 +105,29 @@ nav a:hover { color: var(--accent); }
 }
 .topic-map h2 { font-size: 18px; margin-bottom: 8px; }
 .topic-map p { margin: 0; font-size: 15px; }
+.topic-map a {
+  display: block;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  text-decoration: none;
+}
+.guide-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 28px 0 36px;
+}
+.guide-steps section {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+}
+.guide-steps strong { color: var(--accent); }
+.guide-steps h2 { font-size: 19px; margin: 8px 0; }
+.guide-steps p { margin: 0; font-size: 15px; }
 .article { max-width: 860px; }
 .article-header img { width: 100%; aspect-ratio: 16 / 8; object-fit: cover; border-radius: 8px; margin: 26px 0 12px; }
 .article-meta { color: var(--muted); font-size: 14px; margin: 10px 0 0; }
@@ -138,6 +161,6 @@ th { background: var(--soft); text-align: left; }
 .site-footer a { color: var(--accent-dark); }
 @media (max-width: 880px) {
   .site-header { align-items: flex-start; flex-direction: column; }
-  .grid, .feature-list, .route-list, .topic-map { grid-template-columns: 1fr; }
+  .grid, .feature-list, .route-list, .topic-map, .guide-steps { grid-template-columns: 1fr; }
   .hero { min-height: 460px; }
 }
