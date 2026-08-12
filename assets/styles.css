@@ -144,6 +144,27 @@ nav a:hover { color: var(--accent); }
 }
 .info-box h2 { margin-top: 0; }
 .info-box li { margin: 10px 0; }
+.value-note {
+  border-color: #b9d5ef;
+  background: #f1f7fd;
+}
+.value-note h3 {
+  margin: 8px 0 12px;
+  font-size: 19px;
+  line-height: 1.42;
+}
+.author-box {
+  margin: 22px 0 28px;
+  padding: 16px 18px;
+  border-left: 4px solid var(--accent);
+  background: #f8fbff;
+}
+.author-box strong { display: block; margin-bottom: 4px; }
+.author-box p { margin: 0; color: var(--muted); font-size: 15px; }
+.depth-box {
+  background: #fff;
+  border-color: #cbd8e6;
+}
 .official-links li {
   display: grid;
   gap: 3px;
