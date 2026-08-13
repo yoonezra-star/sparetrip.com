@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>출국 정보 정리표 | SpareTrip</title>
+  <meta name="description" content="항공편, 공항 이동, 숙소, 보험과 비상 연락 정보를 한 장으로 정리해 인쇄할 수 있는 SpareTrip 출국 정보 정리표입니다.">
+  <link rel="canonical" href="https://sparetrip.com/tools/departure-information-sheet/">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <meta property="og:title" content="출국 정보 정리표 | SpareTrip">
+  <meta property="og:description" content="항공편, 숙소, 공항 이동, 보험 정보를 한 장으로 정리합니다.">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"SpareTrip 출국 정보 정리표","url":"https://sparetrip.com/tools/departure-information-sheet/","applicationCategory":"TravelApplication","operatingSystem":"Web","inLanguage":"ko-KR","description":"항공편, 공항 이동, 숙소, 보험과 비상 연락 정보를 한 장으로 정리해 인쇄할 수 있는 브라우저 도구입니다."}</script>
+</head>
+<body class="departure-tool">
+  <header class="site-header">
+    <a class="brand" href="/">SpareTrip</a>
+    <nav aria-label="주요 메뉴"><a href="/posts/">여행 준비글</a><a href="/about/">소개</a><a href="/editorial-policy/">편집 원칙</a><a href="/contact/">문의</a></nav>
+  </header>
+  <main class="article departure-sheet">
+    <h1>출국 정보 정리표</h1>
+    <p class="lead">항공편, 공항 이동, 숙소, 보험 연락처가 여러 앱에 흩어져 있으면 출국 당일에 찾기 어렵습니다. 필요한 정보만 한 장으로 정리해 인쇄하거나 PDF로 저장하세요.</p>
+    <section class="info-box quick-check"><h2>개인정보 안내</h2><p>이 도구는 입력값을 SpareTrip 서버로 전송하거나 저장하지 않습니다. 여권번호, 카드번호, 비밀번호처럼 민감한 정보는 입력하지 마세요.</p></section>
+
+    <div class="tool-layout">
+      <form class="organizer-form" id="departure-form">
+        <fieldset>
+          <legend>여행 기본 정보</legend>
+          <div class="form-row">
+            <label>여행지<input name="destination" autocomplete="off" placeholder="예: 일본 도쿄"></label>
+            <label>여행 기간<input name="dates" autocomplete="off" placeholder="예: 8월 20일 - 8월 24일"></label>
+          </div>
+          <label>출국 전 메모<textarea name="tripNote" placeholder="예: 출국 전날 온라인 체크인, 전자 입국신고 확인"></textarea></label>
+        </fieldset>
+        <fieldset>
+          <legend>항공편과 공항 이동</legend>
+          <div class="form-row">
+            <label>출국편<input name="outbound" autocomplete="off" placeholder="예: 인천 T1 - 나리타, 항공편명·출발 시각"></label>
+            <label>귀국편<input name="returnFlight" autocomplete="off" placeholder="예: 나리타 - 인천 T1, 항공편명·출발 시각"></label>
+          </div>
+          <label>공항 이동 계획<textarea name="airportTransfer" placeholder="예: 공항철도 06:10 출발, 공항 도착 목표 07:20"></textarea></label>
+        </fieldset>
+        <fieldset>
+          <legend>숙소와 현지 이동</legend>
+          <label>숙소 정보<textarea name="stay" placeholder="숙소 이름, 주소, 체크인 가능 시간, 예약번호를 적습니다."></textarea></label>
+          <label>도착 첫날 이동<textarea name="firstMove" placeholder="예: 공항철도 - OO역, 역 3번 출구에서 도보 5분"></textarea></label>
+        </fieldset>
+        <fieldset>
+          <legend>보험과 비상 연락</legend>
+          <div class="form-row">
+            <label>보험·긴급지원<input name="insurance" autocomplete="off" placeholder="예: 보험사 긴급지원 번호, 증권 보관 위치"></label>
+            <label>비상 연락처<input name="emergency" autocomplete="off" placeholder="예: 동행자·가족 연락처"></label>
+          </div>
+          <label>현지에서 확인할 메모<textarea name="localNote" placeholder="예: eSIM 개통, 카드 분실 신고 번호, 약 복용 메모"></textarea></label>
+        </fieldset>
+        <div class="tool-actions">
+          <button type="button" id="print-sheet">정리표 인쇄하기</button>
+          <button class="secondary" type="reset">입력 지우기</button>
+        </div>
+      </form>
+
+      <aside class="organizer-preview" aria-live="polite">
+        <h2>내 출국 정보</h2>
+        <p>입력하는 내용이 이곳에 바로 정리됩니다.</p>
+        <section><h3>여행</h3><p id="preview-destination" class="organizer-empty">여행지와 기간을 입력하세요.</p></section>
+        <section><h3>항공·공항</h3><p id="preview-flight" class="organizer-empty">출국편, 귀국편, 공항 이동 계획을 입력하세요.</p></section>
+        <section><h3>숙소·첫날 이동</h3><p id="preview-stay" class="organizer-empty">숙소 주소와 도착 첫날 이동을 입력하세요.</p></section>
+        <section><h3>보험·비상</h3><p id="preview-emergency" class="organizer-empty">보험 연락처와 비상 연락처를 입력하세요.</p></section>
+      </aside>
+    </div>
+
+    <section class="info-box depth-box"><h2>정리표를 만들기 전에 확인할 것</h2><table><thead><tr><th>정보</th><th>정리표에 쓰기 전 확인</th><th>관련 가이드</th></tr></thead><tbody><tr><td>항공편</td><td>터미널, 출발 시각, 수하물·환승 조건을 예약 내역과 비교합니다.</td><td><a href="/posts/flight-booking-terms-checklist/">항공권 예약 전 체크리스트</a></td></tr><tr><td>숙소</td><td>주소, 체크인 시간, 취소 조건을 다시 확인합니다.</td><td><a href="/posts/hotel-booking-terms-checklist/">숙소 예약 전 체크리스트</a></td></tr><tr><td>보험</td><td>보험 기간, 긴급지원 연락처, 증권 보관 위치를 적습니다.</td><td><a href="/posts/travel-insurance-claim-emergency-checklist/">보험 사고 대응 체크리스트</a></td></tr><tr><td>공항 이동</td><td>첫차·막차, 예약 필요 여부, 공항 도착 목표 시각을 확인합니다.</td><td><a href="/posts/incheon-airport-departure-checklist/">인천공항 출국 전 체크리스트</a></td></tr></tbody></table></section>
+    <section class="info-box"><h2>출국 당일에는 이렇게 씁니다</h2><ol><li>공항으로 출발하기 전 항공편·터미널·공항 이동 계획을 한 번 봅니다.</li><li>체크인 뒤에는 숙소 주소와 첫날 이동 구간을 다시 확인합니다.</li><li>문제가 생기면 보험·비상 연락 영역의 정보를 먼저 찾습니다.</li></ol><p>정리표가 최신 정보 자체를 대신하지는 않습니다. 항공, 입국, 공항 운영 조건은 출국 직전에 각 공식 안내와 예약 내역을 다시 확인하세요.</p></section>
+    <section class="info-box related-links"><h2>함께 사용할 도구와 글</h2><ul><li><a href="/tools/travel-readiness-score/">여행 준비 점수표</a></li><li><a href="/travel-guide/travel-preparation-checklist/">여행 준비 순서 허브</a></li><li><a href="/posts/overseas-trip-7-days-before-checklist/">출국 7일 전 체크리스트</a></li></ul></section>
+  </main>
+  <footer class="site-footer"><p>SpareTrip은 여행 준비 과정을 단계별로 정리하는 개인 운영 여행 정보 사이트입니다.</p><p><a href="/about/">소개</a> · <a href="/sources/">출처 안내</a> · <a href="/privacy/">개인정보처리방침</a> · <a href="/disclaimer/">면책 및 광고 고지</a> · <a href="/contact/">문의</a> · <a href="/editorial-policy/">편집 원칙</a></p></footer>
+  <script>
+    const form = document.querySelector('#departure-form');
+    const fields = Object.fromEntries([...form.elements].filter((element) => element.name).map((element) => [element.name, element]));
+    const previews = {
+      destination: document.querySelector('#preview-destination'),
+      flight: document.querySelector('#preview-flight'),
+      stay: document.querySelector('#preview-stay'),
+      emergency: document.querySelector('#preview-emergency')
+    };
+
+    function showPreview(element, lines, emptyMessage) {
+      const content = lines.filter(Boolean).join('\n');
+      element.textContent = content || emptyMessage;
+      element.classList.toggle('organizer-empty', !content);
+    }
+
+    function updatePreview() {
+      showPreview(previews.destination, [fields.destination.value, fields.dates.value, fields.tripNote.value], '여행지와 기간을 입력하세요.');
+      showPreview(previews.flight, [fields.outbound.value && `출국: ${fields.outbound.value}`, fields.returnFlight.value && `귀국: ${fields.returnFlight.value}`, fields.airportTransfer.value], '출국편, 귀국편, 공항 이동 계획을 입력하세요.');
+      showPreview(previews.stay, [fields.stay.value, fields.firstMove.value && `첫날 이동: ${fields.firstMove.value}`], '숙소 주소와 도착 첫날 이동을 입력하세요.');
+      showPreview(previews.emergency, [fields.insurance.value && `보험: ${fields.insurance.value}`, fields.emergency.value && `비상: ${fields.emergency.value}`, fields.localNote.value], '보험 연락처와 비상 연락처를 입력하세요.');
+    }
+
+    form.addEventListener('input', updatePreview);
+    form.addEventListener('reset', () => window.setTimeout(updatePreview, 0));
+    document.querySelector('#print-sheet').addEventListener('click', () => window.print());
+  </script>
+</body>
+</html>
