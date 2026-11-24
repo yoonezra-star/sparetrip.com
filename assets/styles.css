@@ -234,6 +234,11 @@ nav a:hover { color: var(--accent); }
 table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 15px; }
 th, td { border: 1px solid var(--line); padding: 10px 12px; vertical-align: top; }
 th { background: var(--soft); text-align: left; }
+.article-title-ad { width: 100%; min-width: 0; margin: 28px 0; padding-top: 12px; border-top: 1px solid var(--line); }
+.article-title-ad .ad-label { margin: 0 0 8px; color: var(--muted); font-size: 12px; font-weight: 400; text-align: center; }
+.article-title-ad > .adsbygoogle { min-height: 250px; }
+.article-title-ad:has(> .adsbygoogle[data-ad-status="unfilled"]) { display: none; }
+@media print { .article-title-ad { display: none; } }
 .source-note { color: var(--muted); font-size: 13px; margin-top: 0; }
 .site-footer { border-top: 1px solid var(--line); padding: 32px clamp(18px, 4vw, 56px); color: var(--muted); background: var(--soft); }
 .site-footer a { color: var(--accent-dark); }
